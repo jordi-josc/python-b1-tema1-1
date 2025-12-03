@@ -43,8 +43,15 @@ Exemple:
 
 def sum_odd_numbers(list_numbers):
     # Write here your code
-    pass
+    numeros_imparells = 0
+    for i in list_numbers:
+        if i%2!=0 and i >= 0:
+            numeros_imparells += i
+        elif i < 0:
+            raise ValueError("MISSATGE D'ERROR, NO POT HAVER-HI UN NUMERO NEGATIU")
+            
+    return numeros_imparells
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
+print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))

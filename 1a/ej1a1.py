@@ -41,8 +41,18 @@ Exemple:
 
 def fibonacci(fibonacci_number):
     # Write here your code
-    pass
+    try:
+        if fibonacci_number == 0:
+            return 0
+        elif fibonacci_number == 1:
+            return 1
+        elif int(fibonacci_number) < 0:
+            print("El valor no pot ser menor a zero!")
+        else:
+            return fibonacci(fibonacci_number-1) + fibonacci(fibonacci_number-2)
+    except ValueError:
+        print("El valor no és numèric!")
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(fibonacci(10))
+print(fibonacci(10))

@@ -32,11 +32,25 @@ Exemple:
      9
 
 '''
+import unidecode
 
 def count_vowels(text_chain:str):
     # Write here your code
-    pass
+    
+    counter = 0
+    
+    vowels = ["a", "e", "i", "o", "u"]
+    
+    texto_minusculas = text_chain.lower()
+    texto_sin_tildes = unidecode.unidecode(texto_minusculas)
+    
+    for i in texto_sin_tildes:
+        for j in vowels:
+            if i == j:
+                counter += 1
+    
+    return(counter)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(count_vowels("Hello world, this is an example."))
+print(count_vowels("Hello wórld, this is an example."))
